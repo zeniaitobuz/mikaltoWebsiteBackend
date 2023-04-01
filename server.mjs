@@ -46,9 +46,9 @@ const server = http.createServer((req, res) => {
       let fullFormdata = Buffer.concat(formDataBase).toString();
       if (fullFormdata.length > 0) {
         (async function () {
-          const dataFromFile = await fs.readFile("./js/formData.txt", "utf8");
-          fullFormdata += ";" + dataFromFile;
-          await fs.writeFile("./js/formData.txt", fullFormdata);
+          const dataFromFile = await fs.readFile("./formData.txt", "utf8");
+          fullFormdata = `${fullFormdata} ; ${dataFromFile}`;   
+          await fs.writeFile("./formData.txt", fullFormdata);
         })();
       }
     });
