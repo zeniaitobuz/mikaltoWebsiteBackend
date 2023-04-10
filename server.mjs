@@ -1,6 +1,7 @@
 import http from "http";
 import * as fs from "fs/promises";
 import * as links from "./links.mjs";
+import { link } from "fs";
 
 const port = 200;
 
@@ -21,6 +22,10 @@ function getRequestData(req) {
       giftCardService: links.giftCardService,
       spaService: links.spaService,
       adventureService: links.adventureService,
+      entertainment: links.entertainment,
+      kids: links.kids,
+      restaurants: links.restaurants,
+      swimmingPool: links.swimmingPool,
       showRooms: links.showRooms,
       travelImg1: links.travelImg1,
       travelImg2: links.travelImg2,
